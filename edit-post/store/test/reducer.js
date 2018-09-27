@@ -23,6 +23,7 @@ describe( 'state', () => {
 			expect( state ).toEqual( {
 				editorMode: 'visual',
 				isGeneralSidebarDismissed: false,
+				disabledPanels: {},
 				panels: { 'post-status': true },
 				features: { fixedToolbar: false },
 				pinnedPluginItems: {},
@@ -49,6 +50,38 @@ describe( 'state', () => {
 			} );
 
 			expect( state.isGeneralSidebarDismissed ).toBe( true );
+		} );
+
+		it( 'should disable panels', () => {
+			const original = deepFreeze( {
+				disabledPanels: {
+					'post-excerpt': true,
+				},
+			} );
+			const state = preferences( original, {
+				type: 'DISABLE_PANEL',
+				panel: 'post-status',
+			} );
+			expect( state.disabledPanels ).toEqual( {
+				'post-excerpt': true,
+				'post-status': true,
+			} );
+		} );
+
+		it( 'should enable panels', () => {
+			const original = deepFreeze( {
+				disabledPanels: {
+					'post-excerpt': true,
+					'post-status': true,
+				},
+			} );
+			const state = preferences( original, {
+				type: 'ENABLE_PANEL',
+				panel: 'post-status',
+			} );
+			expect( state.disabledPanels ).toEqual( {
+				'post-excerpt': true,
+			} );
 		} );
 
 		it( 'should set the sidebar panel open flag to true if unset', () => {

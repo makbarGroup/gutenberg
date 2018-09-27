@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OptionsModal should match snapshot when the modal is active 1`] = `
+<WithInstanceId(Modal)
+  className="edit-post-options"
+  closeLabel="Close"
+  title={
+    <span
+      className="edit-post-options__title"
+    >
+      Options
+    </span>
+  }
+>
+  <Section
+    title="General"
+  >
+    <WithInstanceId(CheckboxControl)
+      className="edit-post-options__option"
+      label="Enable Pre-publish Checks"
+    />
+    <WithInstanceId(CheckboxControl)
+      className="edit-post-options__option"
+      label="Enable Tips"
+    />
+  </Section>
+  <Section
+    title="Document Panels"
+  >
+    <WithInstanceId(CheckboxControl)
+      className="edit-post-options__option"
+      label="Status & Visibility"
+    />
+    <WithInstanceId(CheckboxControl)
+      className="edit-post-options__option"
+      label="Categories"
+    />
+    <WithInstanceId(CheckboxControl)
+      className="edit-post-options__option"
+      label="Tags"
+    />
+    <WithInstanceId(CheckboxControl)
+      className="edit-post-options__option"
+      label="Featured Image"
+    />
+    <WithInstanceId(CheckboxControl)
+      className="edit-post-options__option"
+      label="Excerpt"
+    />
+    <WithInstanceId(CheckboxControl)
+      className="edit-post-options__option"
+      label="Discussion"
+    />
+  </Section>
+</WithInstanceId(Modal)>
+`;
+
+exports[`OptionsModal should match snapshot when the modal is not active 1`] = `""`;

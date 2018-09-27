@@ -13,6 +13,8 @@ import {
 	toggleFeature,
 	togglePinnedPluginItem,
 	requestMetaBoxUpdates,
+	enablePanel,
+	disablePanel,
 } from '../actions';
 
 describe( 'actions', () => {
@@ -54,6 +56,24 @@ describe( 'actions', () => {
 		it( 'should return an TOGGLE_PUBLISH_SIDEBAR action', () => {
 			expect( togglePublishSidebar() ).toEqual( {
 				type: 'TOGGLE_PUBLISH_SIDEBAR',
+			} );
+		} );
+	} );
+
+	describe( 'enablePanel', () => {
+		it( 'should return an ENABLE_PANEL action', () => {
+			expect( enablePanel( 'post-status' ) ).toEqual( {
+				type: 'ENABLE_PANEL',
+				panel: 'post-status',
+			} );
+		} );
+	} );
+
+	describe( 'disablePanel', () => {
+		it( 'should return an DISABLE_PANEL action', () => {
+			expect( disablePanel( 'post-status' ) ).toEqual( {
+				type: 'DISABLE_PANEL',
+				panel: 'post-status',
 			} );
 		} );
 	} );

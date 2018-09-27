@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-import { get } from 'lodash';
+import { get, omit } from 'lodash';
 
 /**
  * WordPress dependencies
@@ -33,6 +33,8 @@ export const DEFAULT_ACTIVE_GENERAL_SIDEBAR = 'edit-post/document';
  *                                                  sidebar.
  * @param {boolean} state.isSidebarOpened           Whether the sidebar is
  *                                                  opened or closed.
+ * @param {Object} state.disabledPanels             Whether a sidebar panel
+ *                                                  should be hidden in the UI.
  * @param {Object}  state.panels                    The state of the different
  *                                                  sidebar panels.
  * @param {Object}  action                          Dispatched action.
@@ -45,6 +47,20 @@ export const preferences = combineReducers( {
 			case 'OPEN_GENERAL_SIDEBAR':
 			case 'CLOSE_GENERAL_SIDEBAR':
 				return action.type === 'CLOSE_GENERAL_SIDEBAR';
+		}
+
+		return state;
+	},
+	disabledPanels( state = PREFERENCES_DEFAULTS.disabledPanels, action ) {
+		switch ( action.type ) {
+			case 'ENABLE_PANEL':
+				return omit( state, action.panel );
+
+			case 'DISABLE_PANEL':
+				return {
+					...state,
+					[ action.panel ]: true,
+				};
 		}
 
 		return state;

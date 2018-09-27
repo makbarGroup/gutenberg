@@ -17,7 +17,11 @@ import { withSelect, withDispatch } from '@wordpress/data';
  */
 const PANEL_NAME = 'featured-image';
 
-function FeaturedImage( { isOpened, postType, onTogglePanel } ) {
+function FeaturedImage( { isEnabled, isOpened, postType, onTogglePanel } ) {
+	if ( ! isEnabled ) {
+		return null;
+	}
+
 	return (
 		<PostFeaturedImageCheck>
 			<PanelBody
@@ -38,10 +42,11 @@ function FeaturedImage( { isOpened, postType, onTogglePanel } ) {
 const applyWithSelect = withSelect( ( select ) => {
 	const { getEditedPostAttribute } = select( 'core/editor' );
 	const { getPostType } = select( 'core' );
-	const { isEditorSidebarPanelOpened } = select( 'core/edit-post' );
+	const { isEditorSidebarPanelEnabled, isEditorSidebarPanelOpened } = select( 'core/edit-post' );
 
 	return {
 		postType: getPostType( getEditedPostAttribute( 'type' ) ),
+		isEnabled: isEditorSidebarPanelEnabled( PANEL_NAME ),
 		isOpened: isEditorSidebarPanelOpened( PANEL_NAME ),
 	};
 } );

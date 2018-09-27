@@ -94,6 +94,36 @@ export function togglePublishSidebar() {
 }
 
 /**
+ * Returns an action object used to enable a sidebar panel. The panel will
+ * re-appear in the UI.
+ *
+ * @param {string} panel A string that identifies the panel to enable.
+ *
+ * @return {Object} Action object.
+ */
+export function enablePanel( panel ) {
+	return {
+		type: 'ENABLE_PANEL',
+		panel,
+	};
+}
+
+/**
+ * Returns an action object used to disable a sidebar panel. The panel will be
+ * removed completely from the UI.
+ *
+ * @param {string} panel A string that identifies the panel to disable.
+ *
+ * @return {Object} Action object.
+ */
+export function disablePanel( panel ) {
+	return {
+		type: 'DISABLE_PANEL',
+		panel,
+	};
+}
+
+/**
  * Returns an action object used in signalling that use toggled a panel in the editor.
  *
  * @param {string}  panel The panel to toggle.

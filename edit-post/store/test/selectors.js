@@ -22,6 +22,7 @@ import {
 	getMetaBox,
 	getActiveMetaBoxLocations,
 	isMetaBoxLocationActive,
+	isEditorSidebarPanelEnabled,
 } from '../selectors';
 
 jest.mock( '@wordpress/deprecated', () => jest.fn() );
@@ -204,6 +205,30 @@ describe( 'selectors', () => {
 			};
 
 			expect( isModalActive( state, 'test-modal' ) ).toBe( false );
+		} );
+	} );
+
+	describe( 'isEditorSidebarPanelEnabled', () => {
+		it( 'should return true by default', () => {
+			const state = {
+				preferences: {
+					disabledPanels: {},
+				},
+			};
+
+			expect( isEditorSidebarPanelEnabled( state, 'post-status' ) ).toBe( true );
+		} );
+
+		it( 'should reutrn false when a panel has been disabled', () => {
+			const state = {
+				preferences: {
+					disabledPanels: {
+						'post-status': true,
+					},
+				},
+			};
+
+			expect( isEditorSidebarPanelEnabled( state, 'post-status' ) ).toBe( false );
 		} );
 	} );
 

@@ -12,7 +12,11 @@ import { withSelect, withDispatch } from '@wordpress/data';
  */
 const PANEL_NAME = 'post-excerpt';
 
-function PostExcerpt( { isOpened, onTogglePanel } ) {
+function PostExcerpt( { isEnabled, isOpened, onTogglePanel } ) {
+	if ( ! isEnabled ) {
+		return null;
+	}
+
 	return (
 		<PostExcerptCheck>
 			<PanelBody title={ __( 'Excerpt' ) } opened={ isOpened } onToggle={ onTogglePanel }>
@@ -25,6 +29,7 @@ function PostExcerpt( { isOpened, onTogglePanel } ) {
 export default compose( [
 	withSelect( ( select ) => {
 		return {
+			isEnabled: select( 'core/edit-post' ).isEditorSidebarPanelEnabled( PANEL_NAME ),
 			isOpened: select( 'core/edit-post' ).isEditorSidebarPanelOpened( PANEL_NAME ),
 		};
 	} ),

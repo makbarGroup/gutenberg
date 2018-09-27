@@ -104,6 +104,20 @@ export function isPublishSidebarOpened( state ) {
 }
 
 /**
+ * Returns true if the given sidebar panel is enabled. Panels are enabled by
+ * default.
+ *
+ * @param {Object} state Global application state.
+ * @param {string} panel A string that identifies the panel.
+ *
+ * @return {boolean} Whether or not the panel is enabled.
+ */
+export function isEditorSidebarPanelEnabled( state, panel ) {
+	const disabledPanels = getPreference( state, 'disabledPanels' );
+	return disabledPanels ? ! disabledPanels[ panel ] : true;
+}
+
+/**
  * Returns true if the editor sidebar panel is open, or false otherwise.
  *
  * @param  {Object}  state Global application state.

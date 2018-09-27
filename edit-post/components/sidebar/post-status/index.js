@@ -25,7 +25,11 @@ import PluginPostStatusInfo from '../plugin-post-status-info';
  */
 const PANEL_NAME = 'post-status';
 
-function PostStatus( { isOpened, onTogglePanel } ) {
+function PostStatus( { isEnabled, isOpened, onTogglePanel } ) {
+	if ( ! isEnabled ) {
+		return null;
+	}
+
 	return (
 		<PanelBody className="edit-post-post-status" title={ __( 'Status & Visibility' ) } opened={ isOpened } onToggle={ onTogglePanel }>
 			<PluginPostStatusInfo.Slot>
@@ -48,6 +52,7 @@ function PostStatus( { isOpened, onTogglePanel } ) {
 
 export default compose( [
 	withSelect( ( select ) => ( {
+		isEnabled: select( 'core/edit-post' ).isEditorSidebarPanelEnabled( PANEL_NAME ),
 		isOpened: select( 'core/edit-post' ).isEditorSidebarPanelOpened( PANEL_NAME ),
 	} ) ),
 	withDispatch( ( dispatch ) => ( {
