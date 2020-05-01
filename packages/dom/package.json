@@ -1,29 +1,35 @@
 {
-	"name": "@wordpress/dom",
-	"version": "2.0.2",
-	"description": "DOM utilities module for WordPress.",
-	"author": "The WordPress Contributors",
-	"license": "GPL-2.0-or-later",
-	"keywords": [
-		"wordpress",
-		"dom",
-		"utils"
-	],
-	"homepage": "https://github.com/WordPress/gutenberg/tree/master/packages/dom/README.md",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/WordPress/gutenberg.git"
-	},
-	"bugs": {
-		"url": "https://github.com/WordPress/gutenberg/issues"
-	},
-	"main": "build/index.js",
-	"module": "build-module/index.js",
-	"dependencies": {
-		"@babel/runtime": "^7.0.0",
-		"lodash": "^4.17.10"
-	},
-	"publishConfig": {
-		"access": "public"
-	}
+  "name": "@wordpress/dom",
+  "version": "2.0.2",
+  "description": "DOM utilities module for WordPress.",
+  "author": "The WordPress Contributors",
+  "license": "GPL-2.0-or-later",
+  "keywords": [
+    "wordpress",
+    "dom",
+    "utils"
+  ],
+  "homepage": "https://github.com/WordPress/gutenberg/tree/master/packages/dom/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WordPress/gutenberg.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WordPress/gutenberg/issues"
+  },
+  "main": "build/index.js",
+  "module": "build-module/index.js",
+  "dependencies": {
+    "@babel/runtime": "^7.0.0",
+    "lodash": "^4.17.10",
+    "snyk": "^1.316.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
