@@ -1,0 +1,40 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.14.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-567746:
+    - '@wordpress/rich-text > lodash':
+        patched: '2020-05-01T01:44:29.881Z'
+    - '@wordpress/edit-post > @wordpress/plugins > lodash':
+        patched: '2020-05-01T01:44:29.881Z'
+    - '@wordpress/components > react-color > lodash':
+        patched: '2020-05-01T01:44:29.881Z'
+    - '@wordpress/edit-post > @wordpress/block-library > @wordpress/editor > lodash':
+        patched: '2020-05-01T01:44:29.881Z'
+    - '@wordpress/components > react-color > reactcss > lodash':
+        patched: '2020-05-01T01:44:29.881Z'
+    - '@wordpress/edit-post > @wordpress/components > react-color > lodash':
+        patched: '2020-05-01T01:44:29.881Z'
+    - '@wordpress/edit-post > @wordpress/block-library > @wordpress/editor > @wordpress/wordcount > lodash':
+        patched: '2020-05-01T01:44:29.881Z'
+    - '@wordpress/edit-post > @wordpress/components > react-color > reactcss > lodash':
+        patched: '2020-05-01T01:44:29.881Z'
+    - '@wordpress/edit-post > @wordpress/block-library > @wordpress/components > react-color > lodash':
+        patched: '2020-05-01T01:44:29.881Z'
+    - '@wordpress/edit-post > @wordpress/block-library > @wordpress/editor > @wordpress/nux > @wordpress/components > lodash':
+        patched: '2020-05-01T01:44:29.881Z'
+    - '@wordpress/edit-post > @wordpress/block-library > @wordpress/components > react-color > reactcss > lodash':
+        patched: '2020-05-01T01:44:29.881Z'
+    - '@wordpress/edit-post > @wordpress/block-library > @wordpress/editor > @wordpress/components > react-color > lodash':
+        patched: '2020-05-01T01:44:29.881Z'
+    - '@wordpress/edit-post > @wordpress/block-library > @wordpress/editor > @wordpress/nux > @wordpress/components > @wordpress/keycodes > lodash':
+        patched: '2020-05-01T01:44:29.881Z'
+    - '@wordpress/edit-post > @wordpress/block-library > @wordpress/editor > @wordpress/components > react-color > reactcss > lodash':
+        patched: '2020-05-01T01:44:29.881Z'
+    - '@wordpress/edit-post > @wordpress/block-library > @wordpress/editor > @wordpress/nux > @wordpress/components > react-color > lodash':
+        patched: '2020-05-01T01:44:29.881Z'
+    - '@wordpress/edit-post > @wordpress/block-library > @wordpress/editor > @wordpress/nux > @wordpress/components > @wordpress/compose > @wordpress/element > lodash':
+        patched: '2020-05-01T01:44:29.881Z'
+    - '@wordpress/edit-post > @wordpress/block-library > @wordpress/editor > @wordpress/nux > @wordpress/components > react-color > reactcss > lodash':
+        patched: '2020-05-01T01:44:29.881Z'
