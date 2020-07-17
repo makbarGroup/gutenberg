@@ -37,7 +37,7 @@
 		"babel-eslint": "8.0.3",
 		"chalk": "^2.4.1",
 		"cross-spawn": "^5.1.0",
-		"eslint": "^4.19.1",
+		"eslint": "^5.0.0",
 		"jest": "^23.4.2",
 		"npm-package-json-lint": "^3.3.1",
 		"read-pkg-up": "^1.0.1",
