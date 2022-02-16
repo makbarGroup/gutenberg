@@ -36,7 +36,7 @@
 		"hpq": "^1.2.0",
 		"lodash": "^4.17.10",
 		"rememo": "^3.0.0",
-		"showdown": "^1.8.6",
+		"showdown": "^2.0.0",
 		"simple-html-tokenizer": "^0.4.1",
 		"tinycolor2": "^1.4.1",
 		"uuid": "^3.1.0"
